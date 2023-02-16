@@ -63,7 +63,7 @@ First, using the input from the virtual agent, we'll make an HTTP request to the
 }
 ```
 
-In this example, we're using the davinci model, prompting using the input from the user, using no more than 400 tokens per request (this number can be increased to 4096[^4]), and a temperature of 0.9 to provide a more verbose response (more randomized as per the docs[^4]). In the headers that are passed, be sure to replace **<YOUR_KEY>** with the secret key you just generated from OpenAI.
+In this example, we're using the davinci model, prompting using the input from the user, using no more than 400 tokens per request (this number can be increased to 4096[^4]), and a temperature of 0.9 to provide a more verbose response (more randomized as per the docs[^4]). In the headers that are passed, be sure to replace < YOUR_KEY > with the secret key you just generated from OpenAI.
 
 [^4]: <https://platform.openai.com/docs/api-reference/completions/create#completions/create-prompt>
 
