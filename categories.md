@@ -1,5 +1,5 @@
 ---
-title: Categories
+title: Research Areas
 layout: categories
 permalink: /categories/
 ---
