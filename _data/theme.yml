@@ -1,5 +1,5 @@
 # Theme Skin
-skin: default # default, night, plum, sea, soft, steel
+skin: night # default, night, plum, sea, soft, steel
 
 # Theme Text
 t:
@@ -26,7 +26,7 @@ t:
 
 # Google Fonts
 google_fonts:
-  - name: "Roboto Mono"
+  - name: "Quantico"
     weights: "400, 400i, 600, 600i"
 
 # Link to specific internal pages in the navigation.
