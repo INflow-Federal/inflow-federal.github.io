@@ -16,7 +16,7 @@ author: Ryan Malani
 actions:
   - label: "Download the White Paper"
     icon: download
-    url: ""
+    url: /assets/whitepapers/chatgpt-ms-teams.pdf
 ---
 
 It goes without saying that the talk of the town is the recently released ChatGPT of OpenAI.[^1] Despite the recent large investment from Microsoft,[^2] we imagine it will take a while to implement the fully-fledged functionality across their product suite. However, in about an hour of combined research and implementation we devised a solution to implement the completions functionality of their most powerful GPT-3 model, text-davinci-003,[^3] as a chatbot available through our Microsoft Teams instance using the OpenAI API (application programming interface).
