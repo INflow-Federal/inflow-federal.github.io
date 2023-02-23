@@ -152,4 +152,4 @@ You can use the "Test bot" functionality at the top to ensure that your API requ
 
 Congrats on deploying your ChatGPT powered Virtual Agent! Just prompt by sending "chatgpt" and it can now be used to generate text:
 
-![power-virtual-agents-output]({{ site.url }}{{ site.baseurl }}/assets/images/power-virtual-agents-output.png){: .align-center}
+![power-virtual-agents5]({{ site.url }}{{ site.baseurl }}/assets/images/power-virtual-agents5.png){: .align-center}
