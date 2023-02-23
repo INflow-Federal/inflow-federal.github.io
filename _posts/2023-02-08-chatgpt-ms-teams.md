@@ -43,6 +43,8 @@ From within your Teams environment, click the **Apps** button in the side naviga
 
 If this is your first time using it, you'll be prompted to add it to your organization's environment. Once you've done that, click **Open** to access the tool. Once it's open, click **Start now** to make a new chatbot, and select the appropriate team you want to have access to it.
 
+![virtual-agents2]({{ site.url }}{{ site.baseurl }}/assets/images/power-virtual-agents2.png){: .align-center}
+
 From there, click into **Topics** on the left. You can switch the status of the default topics to **off** and use the **New topic** dropdown at the top to make a new topic from scratch. Once you have a fresh topic opened up, you'll do the following:
 
 1. Adding some trigger phrases that you'll use to call the functionality of the chatbot - in our case we just used "chatgpt" to keep it simple.
@@ -150,4 +152,4 @@ You can use the "Test bot" functionality at the top to ensure that your API requ
 
 Congrats on deploying your ChatGPT powered Virtual Agent! Just prompt by sending "chatgpt" and it can now be used to generate text:
 
-![power-virtual-agents-output]({{ site.url }}{{ site.baseurl }}/assets/images/power-virtual-agents-output.png){: .align-center}
+![power-virtual-agents5]({{ site.url }}{{ site.baseurl }}/assets/images/power-virtual-agents5.png){: .align-center}
