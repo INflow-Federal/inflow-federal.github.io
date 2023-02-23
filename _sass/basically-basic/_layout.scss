@@ -73,17 +73,20 @@ main {
   }
   .entry-content {
     @include breakpoint($large) {
+      padding: 0 2rem 0 2rem;
       width: span(14 of 16);
     }
   }
 
   header.intro {
+    padding: 0 1rem 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   #main {
+    padding: 0 1rem 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
