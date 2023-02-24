@@ -71,25 +71,30 @@ main {
       align-items: center;
     }
   }
-  .entry-content {
-    @include breakpoint($large) {
-      padding: 0 2rem 0 2rem;
-      width: span(14 of 16);
-    }
-  }
 
   header.intro {
+    h1, p {
+      text-align: center;
+    }
     padding: 0 1rem 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  main.entry-content {
-    padding: 0 1rem 0 1rem;
+  main {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+  
+  main > * {
+    flex: 1 0 300px;
+    margin: 1rem;
+    max-width: calc(100% - 2rem);
   }
 }
 
