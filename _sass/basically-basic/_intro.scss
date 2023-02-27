@@ -12,6 +12,8 @@
   position: relative;
   margin-top: -3rem; /* compensate for intro top margin */
   margin-bottom: 3rem;
+  max-height: 1000px;
+  overflow: hidden;
 
   &::before {
     position: absolute;
@@ -27,6 +29,7 @@
 
   img {
     width: 100%;
+    height: auto;
   }
 }
 
