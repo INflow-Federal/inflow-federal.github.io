@@ -23,7 +23,7 @@ Like many businesses, we decided to make a change in our internal software tools
 
 ## getting started
 
-Much of the getting started will be inspired by a Medium article from Thenusan Santhirakumar[^4]. There are a couple of things that you'll need to get started on this project. Some of these may be interchangable with other tools available on the M1/M2 Mac platforms, but for simplicity I'll dive deep into the methodology we used. To being, there are a couple tools you'll need access to (with download links in the footer, **be sure to download the Apple Silicon versions**):
+Much of the getting started will be inspired by a Medium article from Thenusan Santhirakumar[^4]. There are a couple of things that you'll need to get started on this project. Some of these may be interchangable with other tools available on the M1/M2 Mac platforms, but for simplicity I'll dive deep into the methodology we used. Below are a couple tools you'll need access to (with download links, **be sure to download the Apple Silicon versions if using an M1/M2 Mac**):
 
 1. [Azure Data Studio](https://learn.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver16&culture=en-us&country=us&tabs=redhat-install%2Credhat-uninstall)
 2. [Docker](https://www.docker.com/products/docker-desktop/)
@@ -86,13 +86,13 @@ Once these have executed, you can check your work by opening Docker desktop, and
 
 ![docker-cli]({{ site.url }}{{ site.baseurl }}/assets/images/docker-cli.png){: .align-center}
 
-With the CLI open, use the cd command followed by the path to navigate to the files to and the **ls -l** command to list out the files in that directory and their details (including permissions). If you used 644, it should read **rw-r--r--** like the following:
+With the CLI open, use the cd command followed by the path to navigate to the files and the **ls -l** command to list out the files in that directory and their details (including permissions). If you used 644, it should read **rw-r--r--** like the following:
 
 ![file-permissions]({{ site.url }}{{ site.baseurl }}/assets/images/file-permissions.png){: .align-center}
 
 ## restoring the database
 
-Now that your localhost server is connected and your container is up and running, it's time to restore the database from the files you were provided. There are a couple of things you'll need to do:
+Now that your localhost server is connected and your container is up and running, it's time to restore the database from the files you were provided. There are a couple of things you'll need to do. Open a New Query from the master database and do the following:
 
 1. Create a master key. Make sure to replace "yourPassword" with a strong, personalized password.
 
@@ -103,7 +103,7 @@ CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'yourPassword'
 GO
 ```
 
-2. Create a certificate in Azure Data Studio using the master key, certificate file, and private key file. Replace the master key decryption password with the one you just created in step 1 and the certificate/private key decryption password with the one provided by the creator of the backup file. Replace certificate_name with a name of your choice, and replace the file paths with the path you chose and the names of your files if they are different.
+2. Create a certificate in Azure Data Studio using the master key, certificate file, and private key file. Replace the master key decryption password with the one you just created in step 1 and the certificate/private key decryption password with the one provided by the creator of the backup file. Replace certificate_name with the name of the certificate preceeding the .cer extension, and replace the file paths with the path you chose and the respective names of your files.
 
 ```sql
 USE master
@@ -121,7 +121,7 @@ Now, it's time to restore from the backup file. With the server connected, you w
 
 ![database-backup]({{ site.url }}{{ site.baseurl }}/assets/images/database-backup.png){: .align-center}
 
-Now, you'll want to click the three dots next to the Backup file path and it should open the directory structure of your container. If you chose the same path as me, your file will be under **var/opt/mssql/backup/your_file.bak**. Select that file and click **OK**. The rest of the fields should autofill and you can click **Restore**. Give it a few minutes, and your database should be successfully restored locally!
+Now, you'll want to click the three dots next to the Backup file path and it should open the directory structure of your container. If you chose the more traditional path, your file will be under **var/opt/mssql/backup/your_file.bak**. Select that file and click **OK**. The rest of the fields should autofill and you can click **Restore**. Give it a few minutes, and your database should be successfully restored locally!
 
 ## usage
 
