@@ -1,6 +1,6 @@
 ---
 title: "Using Docker to Restore MSSQL Databases on M1 Macs"
-excerpt: "Want ChatGPT in your org's MS Teams and can't wait to see if Microsoft will do it themselves?"
+excerpt: "An alternative solution to SQL Server Management Studio (SSMS) for M1/M2 Macs."
 last_modified_at: 2023-02-23T10:27:01-05:00
 tags:
   - Database
