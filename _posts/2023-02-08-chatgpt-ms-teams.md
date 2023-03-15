@@ -1,4 +1,5 @@
 ---
+permalink: /chatgpt-msteams
 title: "ChatGPT in Microsoft Teams"
 excerpt: "Want ChatGPT in your org's MS Teams and can't wait to see if Microsoft will do it themselves?"
 last_modified_at: 2023-02-15T10:27:01-05:00

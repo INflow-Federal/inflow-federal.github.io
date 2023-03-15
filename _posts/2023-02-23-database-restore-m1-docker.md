@@ -1,4 +1,5 @@
 ---
+permalink: /docker-mssql-m1
 title: "Using Docker to Restore MSSQL Databases on M1 Macs"
 excerpt: "An alternative solution to SQL Server Management Studio (SSMS) for M1/M2 Macs."
 last_modified_at: 2023-02-23T10:27:01-05:00
@@ -6,7 +7,6 @@ tags:
   - Database
   - MSSQL
   - Docker
-  - M1
   - Azure Data Studio
   - SQL
 categories:
@@ -74,7 +74,7 @@ In order to successfully restore the database from the backup file, you'll have 
 docker cp local/path/to/file container-name:/path/to/file/on/container
 ```
 
-Run the command above to copy each file to the container. Make sure to do this for each file, including .bak, .cer, and .pvk files. Once that is complete, you'll need to change the permissions of the files in the container. Traditionlly, this has been a pain point of docker, but I've found the following command to be successful so that the server connection in Azure Data Studio can access them properly:
+Run the command above to copy each file to the container. Make sure to do this for each file, including .bak, .cer, and .pvk files. Prior to changing the permissions, I would recommend taking inventory of the default permissions to change them back later if needed using the **ls -l** command shown below. Once that is complete, you'll need to change the permissions of the files in the container. Traditionlly, this has been a pain point of docker, but I've found the following command to be successful so that the server connection in Azure Data Studio can access them properly:
 
 ```
 sudo docker exec -u root container-name chmod 644 path/to/file/on/container
