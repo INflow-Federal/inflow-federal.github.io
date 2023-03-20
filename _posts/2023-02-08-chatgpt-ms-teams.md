@@ -26,17 +26,17 @@ It goes without saying that the talk of the town is the recently released ChatGP
 [^2]: <https://www.bloomberg.com/news/articles/2023-01-23/microsoft-makes-multibillion-dollar-investment-in-openai>
 [^3]: <https://platform.openai.com/docs/models/gpt-3>
 
-## getting started
+## Getting Started
 
 There are a couple of things that you'll need to get started on this project. The first is obviously [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software), second is [Power Virtual Agents](https://powervirtualagents.microsoft.com/en-us/) and [Power Automate](https://powerautomate.microsoft.com/en-us/), and lastly would be an [OpenAI account](https://platform.openai.com/signup) capable of generating API keys.
 
-## generating an API key
+## Generating an API Key
 
 Log into your OpenAI account, click on the organization or profile listed in the navigation ribbon, and click on **View API keys**. From there, you can just click **Create new secret key** and copy your newly generated key.
 
 ![openai-key]({{ site.url }}{{ site.baseurl }}/assets/images/openai-generate-key.png){: .align-center}
 
-## creating a new virtual agent
+## Creating a New Virtual Agent
 
 From within your Teams environment, click the **Apps** button in the side navigation menu and search for "Power Virtual Agents".
 
@@ -53,7 +53,7 @@ From there, click into **Topics** on the left. You can switch the status of the 
 
 ![virtual-agents3]({{ site.url }}{{ site.baseurl }}/assets/images/power-virtual-agents3.png){: .align-center}
 
-## creating the power automate flow
+## Creating the Power Automate Flow
 
 Next, we'll create a node to "Call an action" and "Create a flow". I've already created the API request flow, so I'll skip ahead and explain how it works.
 
@@ -139,7 +139,7 @@ body('Parse_JSON')?['choices']?[0]['text']
 
 Finally, send the output of the output step of the flow to the virtual agent and share that with the user in the "Message" node.
 
-## publishing the virtual agent
+## Publishing the Virtual Agent
 
 You can use the "Test bot" functionality at the top to ensure that your API request is being routed correctly and providing you with a proper output. As long as everything looks good, you're ready to publish your bot for use by the rest of your team! Here's how:
 
@@ -149,7 +149,7 @@ You can use the "Test bot" functionality at the top to ensure that your API requ
 
 ![power-virtual-agents4]({{ site.url }}{{ site.baseurl }}/assets/images/power-virtual-agents4.png){: .align-center}
 
-## usage
+## Usage
 
 Congrats on deploying your ChatGPT powered Virtual Agent! Just prompt by sending "chatgpt" and it can now be used to generate text:
 
