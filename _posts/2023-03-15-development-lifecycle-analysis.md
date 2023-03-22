@@ -1,6 +1,6 @@
 ---
 title: "Using Git Versioning Data to Analyze Development Lifecycles"
-excerpt: ""
+excerpt: "Using Data Science techniques to analyze the Git development progression of DoD Platform One."
 last_modified_at: 2023-03-15T10:27:01-05:00
 tags:
   - Python
