@@ -173,6 +173,15 @@ data_topics_df
 [^6]: <http://blog.echen.me/2011/08/22/introduction-to-latent-dirichlet-allocation/>
 [^7]: <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html>
 
+## Future Iterations
+
+To continue improving on this idea, there are a multitude of avenues that we can take. In the topic modeling section, we're not taking advantage of our TF-IDF vectorizer. In order to gain more actionable insight from these documents, we plan to use either a graph algorithm such as TextRank[^8] similar to Google's PageRank, or a large language model such as BART[^9] (sequence-to-sequence model), T5[^10] (text-to-text transformer model) or GPT-4[^11] (dedicated language model).
+
+[^8]: <https://medium.com/analytics-vidhya/sentence-extraction-using-textrank-algorithm-7f5c8fd568cd>
+[^9]: <https://huggingface.co/facebook/bart-large>
+[^10]: <https://huggingface.co/docs/transformers/model_doc/t5>
+[^11]: <https://openai.com/research/gpt-4>
+
 ## Usage
 
 If you want to try this out for yourself, clone the [source code](https://github.com/INflow-Federal/contract-analysis) repository on our GitHub and open the jupyter notebook in your conda environment in terminal using `jupyter notebook contract-analysis.ipynb`. Any questions? Feel free to [contact us](mailto:labs@inflowfed.com) and ask away.
