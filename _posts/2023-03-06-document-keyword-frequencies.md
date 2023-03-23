@@ -1,14 +1,16 @@
 ---
+permalink: /doc-summarization
 title: "Extracting Keyword Frequencies from PDF/DOCX Documents"
-excerpt: "Utilizing a TFIDF (Term Frequency, Inverse Document Frequency) algorithm to identify documents that align well with our corporate capabilities."
+excerpt: "Utilizing a TFIDF (Term Frequency-Inverse Document Frequency) algorithm to identify documents that align well with our corporate capabilities."
 last_modified_at: 2023-03-06T10:27:01-05:00
 tags:
-  - TFIDF
+  - TF-IDF
   - Python
 categories:
   - Document Processing
   - Algorithms
   - Machine Learning
+  - Data Science
 author: Shaun Laranjeira, Ryan Malani
 actions:
   - label: "Download the White Paper"
@@ -16,7 +18,7 @@ actions:
     url: /assets/whitepapers/tfidf-pdf-docx.pdf
 ---
 
-Given the size and scale of many of the documents we're meant to read and comprehend, we want to ensure that our time is being allocated to those focused primarily in the same focus and capability areas that we as a company are looking to grow into, which led to this quick side project for us to extract relevant terms and their frequencies in documents using a TFIDF (Term Frequency, Inverse Document Frequency) algorithm.
+Given the size and scale of many of the documents we're meant to read and comprehend, we want to ensure that our time is being allocated to those focused primarily in the same focus and capability areas that we as a company are looking to grow into, which led to this quick side project for us to extract relevant terms and their frequencies in documents using a TF-IDF (Term Frequency-Inverse Document Frequency) algorithm.
 
 ## Getting Started
 
@@ -47,7 +49,7 @@ pip install PyPDF2 docx gensim scikit-learn jupyter
 
 ## Vectorize on Frequency of Words in the Text
 
-First, given that we have a folder of documents in pdf and docx formats, we need to have the ability to parse out the text in these documents and output a vector of the frequency that each word is used in the text. To do so, we're going to use the PyPDF2[^3], docx[^4], and scikit-learn libraries, with a Term Frequency, Inverse Document Frequency (TFIDF) Vectorizer algorithm from scikit[^5]. The code below allows us to do just that-
+First, given that we have a folder of documents in pdf and docx formats, we need to have the ability to parse out the text in these documents and output a vector of the frequency that each word is used in the text. To do so, we're going to use the PyPDF2[^3], docx[^4], and scikit-learn libraries, with a Term Frequency-Inverse Document Frequency (TF-IDF) Vectorizer algorithm from scikit[^5]. The code below allows us to do just that -
 
 [^3]: <https://pypi.org/project/PyPDF2/>
 [^4]: <https://pypi.org/project/docx/>
@@ -102,7 +104,7 @@ for i, row in enumerate(tfidf_matrix_array):
 
 ## Extracting the Topic Popularity
 
-In the following code block, we are using preprocessing tools from gensim, to include simple_preprocess and STOPWORDS. Combining this with a list of desired technology words allows us to only extract the relevant terms and their frequencies throughout the document(s). From there, we use an LdaModel (Latent Dirichlet Allocation Model)[^6] to infer the topics contained within the documents.
+In the following code block, we are using preprocessing tools from gensim, to include simple_preprocess and STOPWORDS. Combining this with a list of desired technology words allows us to only extract the relevant terms and their frequencies throughout the document(s). From there, we create a Bag of Words (BoW) corpus which provides a tuple of the ID of the token (word) in the document and it's frequency. Then, use an LdaModel (Latent Dirichlet Allocation Model)[^6] to infer the topics contained within the documents.
 
 ```python
 import gensim
@@ -171,6 +173,6 @@ data_topics_df
 [^6]: <http://blog.echen.me/2011/08/22/introduction-to-latent-dirichlet-allocation/>
 [^7]: <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html>
 
-# Usage
+## Usage
 
 If you want to try this out for yourself, clone the [source code](https://github.com/INflow-Federal/contract-analysis) repository on our GitHub and open the jupyter notebook in your conda environment in terminal using `jupyter notebook contract-analysis.ipynb`. Any questions? Feel free to [contact us](mailto:labs@inflowfed.com) and ask away.
