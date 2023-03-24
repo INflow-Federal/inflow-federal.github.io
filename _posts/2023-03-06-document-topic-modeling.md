@@ -1,7 +1,7 @@
 ---
 permalink: /doc-summarization
-title: "Extracting Keyword Frequencies from PDF/DOCX Documents"
-excerpt: "Utilizing a TFIDF (Term Frequency-Inverse Document Frequency) algorithm to identify documents that align well with our corporate capabilities."
+title: "Topic Modeling on Large PDF/DOCX Documents"
+excerpt: "Utilizing a TFIDF (Term Frequency-Inverse Document Frequency) algorithm and LDA (Latent Dirichlet Allocation) Model to identify documents that align well with our corporate capabilities."
 last_modified_at: 2023-03-06T10:27:01-05:00
 tags:
   - TF-IDF
@@ -15,7 +15,7 @@ author: Shaun Laranjeira, Ryan Malani
 actions:
   - label: "Download the White Paper"
     icon: download
-    url: /assets/whitepapers/tfidf-pdf-docx.pdf
+    url: /assets/whitepapers/tfidf-lda-pdf-docx.pdf
 ---
 
 Given the size and scale of many of the documents we're meant to read and comprehend, we want to ensure that our time is being allocated to those focused primarily in the same focus and capability areas that we as a company are looking to grow into, which led to this quick side project for us to extract relevant terms and their frequencies in documents using a TF-IDF (Term Frequency-Inverse Document Frequency) algorithm.
