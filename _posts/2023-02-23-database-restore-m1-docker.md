@@ -21,7 +21,7 @@ actions:
 
 Like many businesses, we decided to make a change in our internal software tools for attracting talent, and while making the change we were faced with the challenge of ensuring that our data was accessible, intact, and could be used in creative ways going forward regardless of the new platform we chose. With that being said, we were provided a .bak file[^1], .cer file[^2], and a .pvk file[^3] from the provider we were moving from.
 
-## getting started
+## Getting Started
 
 Much of the getting started will be inspired by a Medium article from Thenusan Santhirakumar[^4]. There are a couple of things that you'll need to get started on this project. Some of these may be interchangable with other tools available on the M1/M2 Mac platforms, but for simplicity I'll dive deep into the methodology we used. Below are a couple tools you'll need access to (with download links, **be sure to download the Apple Silicon versions if using an M1/M2 Mac**):
 
@@ -34,7 +34,7 @@ Much of the getting started will be inspired by a Medium article from Thenusan S
 [^3]: <https://file.org/extension/pvk>
 [^4]: <https://medium.com/geekculture/how-to-install-sql-server-in-mac-m1-41121e110214>
 
-## setting up docker
+## Setting Up Docker
 
 First will be [creating a login for docker](https://hub.docker.com) if you don't already have one. The following commands will be inspired by the official Microsoft documentation[^5]. You'll need to open up the terminal and run the following command first:
 
@@ -52,7 +52,7 @@ Next, you'll need to execute the image in a container on a localhost port using 
 docker run --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=yourStrong(!)Password' -p 1433:1433 --name azuresqledge -d mcr.microsoft.com/azure-sql-edge
 ```
 
-## setting up azure data studio
+## Setting Up Azure Data Studio
 
 When you first open Azure Data Studio, you'll be greeted by the main get started menu. From there, you'll want to create a new connection. Make sure your container is running, and then a connection menu will open up and you'll input the following information:
 
@@ -66,7 +66,7 @@ When you first open Azure Data Studio, you'll be greeted by the main get started
 - Trust server certificate: **True**
 - Server group: **Default**
 
-## moving files to the container
+## Moving Files to the Container
 
 In order to successfully restore the database from the backup file, you'll have to move the .bak, .cer, and .pvk files from your local machine to the docker container and ensure that the files have the correct permissions. To do so, use the following commands in your terminal, replacing the paths appropriately and replacing container-name with the name of your container (e.g. azuresqledge:var/opt/mssql/backup/file.cer):
 
@@ -90,7 +90,7 @@ With the CLI open, use the cd command followed by the path to navigate to the fi
 
 ![file-permissions]({{ site.url }}{{ site.baseurl }}/assets/images/file-permissions.png){: .align-center}
 
-## restoring the database
+## Restoring the Database
 
 Now that your localhost server is connected and your container is up and running, it's time to restore the database from the files you were provided. There are a couple of things you'll need to do. Open a New Query from the master database and do the following:
 
@@ -123,6 +123,6 @@ Now, it's time to restore from the backup file. With the server connected, you w
 
 Now, you'll want to click the three dots next to the Backup file path and it should open the directory structure of your container. If you chose the more traditional path, your file will be under **var/opt/mssql/backup/your_file.bak**. Select that file and click **OK**. The rest of the fields should autofill and you can click **Restore**. Give it a few minutes, and your database should be successfully restored locally!
 
-## usage
+## Usage
 
 With your database now restored locally, you can begin to query the data using SQL commands! For reference on how to use SQL, I recommend [W3Schools](https://www.w3schools.com/sql/sql_syntax.asp). Any questions? Feel free to [contact us](mailto:labs@inflowfed.com) and ask away.
